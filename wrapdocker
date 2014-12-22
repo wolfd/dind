@@ -95,5 +95,19 @@ else
 	else
 		docker -d $DOCKER_DAEMON_ARGS &
 	fi
+
+    ## DREAMWORLDS YO
+    echo "SO META EVEN THIS ACRONYM -- DREAMWORLD $DREAMWORLD"
+    # Expects the environment variable DREAMWORLD to be set
+    if [[ $DREAMWORLD -gt 0 ]]; then
+        git clone https://github.com/wolfd/dind.git
+
+        cd dind
+
+        docker build -t dind .
+        let "DREAMWORLD = $DREAMWORLD - 1"
+        docker run --privileged -t -i -e DREAMWORLD=$DREAMWORLD dind
+    fi
+
 	exec bash
 fi

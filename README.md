@@ -1,6 +1,6 @@
-# Docker-in-Docker-in-Docker-in-Docker
+# Docker-in-Docker-in-Docker-in-Docker-ad-Nauseum.
 
-This recipe lets you run Docker within Docker.
+This recipe lets you run Docker within Docker within Docker within Docker within Docker.
 
 ![Inception's Spinning Top](spintop.jpg)
 
@@ -8,6 +8,18 @@ For 5 dreamworlds, type:
 ```bash
 docker build -t dind . && docker run --privileged -t -i -e DREAMWORLD=5 dind
 ```
+
+To shell into your docker worlds copy and paste this line each time you want to go a level deeper
+this only works if you don't have any other containers running in each of these layers
+```bash
+docker exec -ti $(docker ps | tail -n 1 | cut -d ' ' -f1) /bin/bash
+```
+
+Running this will ruin your life and you will also download a bunch of packages, ubuntu, and this repository many times.
+
+But it's so much fun.
+
+# Back to the old dind readme
 
 There is only one requirement: your Docker version should support the
 `--privileged` flag.

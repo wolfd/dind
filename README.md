@@ -1,8 +1,13 @@
-# Docker-in-Docker
+# Docker-in-Docker-in-Docker-in-Docker
 
 This recipe lets you run Docker within Docker.
 
 ![Inception's Spinning Top](spintop.jpg)
+
+For 5 dreamworlds, type:
+```bash
+docker build -t dind . && docker run --privileged -t -i -e DREAMWORLD=5 dind
+```
 
 There is only one requirement: your Docker version should support the
 `--privileged` flag.

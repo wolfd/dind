@@ -1,4 +1,4 @@
-# Docker-in-Docker-in-Docker-in-Docker-ad-Nauseum.
+# Docker-in-Docker-in-Docker-in-Docker-ad-Nauseam.
 
 This recipe lets you run Docker within Docker within Docker within Docker within Docker.
 

@@ -97,7 +97,7 @@ else
 	fi
 
     ## DREAMWORLDS YO
-    echo "SO META EVEN THIS ACRONYM -- DREAMWORLD $DREAMWORLD"
+    
     # Expects the environment variable DREAMWORLD to be set
     if [[ $DREAMWORLD -gt 0 ]]; then
         git clone https://github.com/wolfd/dind.git
@@ -105,8 +105,10 @@ else
         cd dind
 
         docker build -t dind .
-        let "DREAMWORLD = $DREAMWORLD - 1"
-        docker run --privileged -t -i -e DREAMWORLD=$DREAMWORLD dind
+        let "SUBDREAMWORLD = $DREAMWORLD - 1"
+        
+        echo "SO META EVEN THIS ACRONYM -- DREAMWORLD $DREAMWORLD"
+        docker run --privileged -t -i -e DREAMWORLD=$SUBDREAMWORLD dind
     fi
 
 	exec bash
